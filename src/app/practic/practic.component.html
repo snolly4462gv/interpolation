@@ -1,0 +1,70 @@
+<h3>Практическая реализация</h3>
+
+<p>Введите точки для интерполяции</p>
+
+<div class="input-points-block">
+    <div class="one-point-input">
+        <p>X</p>
+        <p>Y</p>
+      </div>
+  <div *ngFor="let point of points" class="one-point-input">
+    <input type="number" [(ngModel)]="point.x">
+    <input type="number" [(ngModel)]="point.y">
+  </div>
+  
+  <div class="one-point-input button">
+      <button (click)="addPoint()" class="btn btn-primary">Добавить</button>
+      <button (click)="deletePoint()" class="btn btn-danger">Удалить</button>
+  </div>
+  <hr>
+  <div>
+
+      <div class="form-group row">
+          <label for="inputPassword" class="col-sm-3 col-form-label">Найти значения функции в точке:</label>
+          <div class="col-sm-9">
+            <input type="number" [(ngModel)]="X" class=" col-sm-4 form-control" id="inputVal" placeholder="Значение">
+          </div>
+      </div>
+
+    <div class="form-group row">
+        <label for="inputMethod" class="col-sm-3 col-form-label">Выберите метод: </label>
+        <div class="col-sm-9">
+          <select (change)="mode = $event.target.value" class=" col-sm-4 form-control" id="inputMethod">
+              <option >Лагранжа</option>
+              <option>Ньютона</option>
+              <option>Кубических сплайнов</option>
+              <option>Рациональная</option>
+            </select>
+        </div>
+    </div>
+   
+
+  </div>
+  <hr>
+  <div class="text-center">
+    <button class="btn btn-success" (click)="getSolve()"><h6>РЕШИТЬ</h6></button>
+  </div>
+  <hr>
+
+  <div *ngIf="isSolve">
+      <div class="row">
+          <div class="col-md-8">
+                  <div style="display: block;">
+                      <canvas baseChart width="40" height="40"
+                        [datasets]="labelMFL"
+                        [labels]="lineChartLabels"
+                        [options]="lineChartOptions"
+                        [colors]="lineChartColors"      
+                        [chartType]="lineChartType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <h4>Информация о решении</h4>
+                  F(X) = {{fX?fX:'none'}}
+              </div>
+      </div>
+  </div>
+
+</div>

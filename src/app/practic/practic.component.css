@@ -1,0 +1,16 @@
+.one-point-input{
+    width: 70px;
+    display: inline-block;
+}
+.one-point-input p{
+    text-align: center;
+    padding-left:10px;
+}
+.one-point-input input{
+    width: 100%;
+    padding: 5px;
+}
+.one-point-input.button{
+    vertical-align: top;
+    /* margin:20px 10px;  */
+}
