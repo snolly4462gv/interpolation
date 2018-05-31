@@ -10,12 +10,18 @@ import { NavComponent } from './nav/nav.component';
 import { AboutComponent } from './about/about.component';
 import { LagrangComponent } from './lagrang/lagrang.component';
 import { PracticComponent } from './practic/practic.component';
+import { NewtoonComponent } from './newtoon/newtoon.component';
+import { SplainComponent } from './splain/splain.component';
+import { RazionalComponent } from './razional/razional.component';
 
 const appRoutes: Routes = [
   { path: '', component: AboutComponent },
   { path: 'about', component: AboutComponent,  pathMatch: 'full' },
   { path: 'lagrang', component: LagrangComponent,  pathMatch: 'full' },
-  { path: 'practic', component: PracticComponent,  pathMatch: 'full' }
+  { path: 'practic', component: PracticComponent, pathMatch: 'full' },
+  { path: 'newtoon', component: NewtoonComponent, pathMatch: 'full' },
+  { path: 'spline', component: SplainComponent, pathMatch: 'full' },
+  { path: 'razional', component: RazionalComponent, pathMatch: 'full' }
 ];
 
 
@@ -26,7 +32,10 @@ const appRoutes: Routes = [
     NavComponent,
     AboutComponent,
     LagrangComponent,
-    PracticComponent
+    PracticComponent,
+    NewtoonComponent,
+    SplainComponent,
+    RazionalComponent
   ],
   imports: [
     

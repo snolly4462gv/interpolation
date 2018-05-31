@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/about/about.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"text text-center\">Интерполяция</h2>\r\n\r\n<h4 class=\"text text-center\">Определение интерполяции</h4>\r\n<p style=\"text-indent: 25px;\">Интерполяция в простейшем классическом смысле – это конструктивное восстановление (чаще всего приближенное) функции определенного класса по известным ее значениям или значениям ее производных в данных точках. Если функция задана в определенных (дискретных) точках на конечном интервале, то сущность интерполяции стоит в отыскании значений функции в промежуточных точках.</p>\r\n<p style=\"text-indent: 25px;\">\r\nСамым распространенным применением интерполяции является получение таблично заданной функции для тех значений ее аргумента, которых в таблице как раз и нет. К интерполяции прибегают не только в случае таблично заданных функций, но и когда функция задана аналитически, но описывающая ее формула громоздка и требует для своего применения трудоемких вычислений.</p>\r\n<p style=\"text-indent: 25px;\">\r\nТермин интерполирование (интерполяция) был впервые употреблён в 1656 году Дж. Валлисом при составлении астрономических и математических таблиц. Он происходит от латинского слова interpolo, означающего переделывать, подновлять, ремонтировать.</p>\r\n\r\n\r\n<h4 class=\"text text-center\">Постановка задачи интерполирования</h4>\r\n<p style=\"text-indent: 25px;\">Пусть в точках <img src=\"../../assets/math/1.png\"> таких, что <img src=\"../../assets/math/2.png\"> , известны значения функции<img src=\"../../assets/math/3.png\">, то есть на отрезке <img src=\"../../assets/math/4.png\"> задана табличная функция (таблица 1.1).</p>\r\n<img src=\"../../assets/math/0.PNG\" style=\"width:500px\"><br><br>\r\n<p style=\"text-indent: 25px;\">Функция <img src=\"../../assets/math/5.png\"> называется интерполирующей или интерполяционной для <img src=\"../../assets/math/6.png\"> на <img src=\"../../assets/math/4.png\">, если ее значения <img src=\"../../assets/math/7.png\"> в заданных точках ,<img src=\"../../assets/math/1.png\"> называемых узлами интерполяции, совпадают с заданными значениями функции <img src=\"../../assets/math/6.png\">, то есть с <img src=\"../../assets/math/8.png\"> соответственно.</p>\r\n\r\n<p>\r\nПроцесс вычисления значений функции <img src=\"../../assets/math/5.png\"> в точках отличных от узлов интерполирования называется интерполированием функции <img src=\"../../assets/math/6.png\">. Если <img src=\"../../assets/math/9.png\">, то задача вычисления приближенного значения функции в точке называется интерполированием.</p>\r\n\r\n<p>\r\nГеометрически задача интерполирования функции одной переменной означает построение кривой, проходящей через заданные точки <img src=\"../../assets/math/10.png\"> (рисунок 1.2).<br>\r\n<img src=\"../../assets/math/11.PNG\"><br><br>\r\nЗадача становится однозначной, если в качестве <img src=\"../../assets/math/5.png\"> выбрать многочлен степени выше n, такой что:<img src=\"../../assets/math/21.png\"><br>\r\n\r\nМногочлен <img src=\"../../assets/math/12.png\">, отвечающий вышеуказанным условиям, называется интерполяционным многочленом.</p>\r\n<!-- <img src=\"../../assets/math/1.png\"> -->\r\n\r\n<p>\r\n        Знание свойств функции <img src=\"../../assets/math/6.png\"> позволяет осознанно выбирать класс G аппроксимирующих функций. Широко используется класс функций вида (1.2), являющихся линейными комбинациями некоторых базисных функций <img src=\"../../assets/math/13.png\">.\r\n        <br><br>\r\n        <img src=\"../../assets/math/14.png\">(1.2)\r\n        <br><br></p>\r\n<p>\r\n        Приближенную функцию нужно искать в виде многочлена степени m, с коэффициентами <img src=\"../../assets/math/15.png\">, которые находятся зависимости от вида приближения. Функцию <img src=\"../../assets/math/16.png\"> называют обобщенным многочленом по системе функций <img src=\"../../assets/math/13.png\">, а число m ― его степенью. Многочлен называется интерполяционным, если он удовлетворяет условию<br><br>\r\n        \r\n        <img src=\"../../assets/math/17.png\">(1.3)\r\n        <br><br>\r\n        \r\n        Условие (1.3) позволяет найти приближающую функцию единственным образом<br><br>\r\n        \r\n        <img src=\"../../assets/math/18.PNG\">\r\n        (1.4)\r\n        <br><br>\r\n        </p>\r\n\r\n<p>        Система (1.4) есть система линейных алгебраических                     уравнений относительно коэффициентов <img                src=\"../../assets/math/15.png\">.</p>\r\n<p>\r\n        Эта система n линейных уравнений имеет единственное решение, если выполняется условие m=n и определитель квадратной матрицы P <br>\r\n        <img src=\"../../assets/math/19.PNG\">\r\n</p>\r\n\r\n<p>\r\n        Система функций <img src=\"../../assets/math/13.png\"> называется Чебышевской системой функции на <img src=\"../../assets/math/4.png\">, если определитель матрицы отличен от нуля при любом расположении узлов <img src=\"../../assets/math/19_2.png\">, когда среди этих узлов нет совпадающих.\r\n    </p>\r\n<p>        Если имеется такая система функций, то можно утверждать, что существует единственный для данной системы функций интерполяционный многочлен <img src=\"../../assets/math/16.png\">, коэффициенты которого определяются единственным образов из системы (1.4).<br>\r\n        \r\n        На практике чаще всего используются следующие системы:\r\n        <br>\r\n        <img src=\"../../assets/math/20.PNG\">\r\n        </p>\r\n<p>В первом случае интерполирование называется алгебраическим, во втором – тригонометрическим, а в третьем – экспоненциальным.\r\n</p>"
+module.exports = "<h2 class=\"text text-center\">Интерполяция</h2>\r\n\r\n<iframe src=\"./../../assets/doc/Ob_interpolyatsii.html\" style=\"height:800px; width:100%; border:none; display:block\"></iframe>\r\n"
 
 /***/ }),
 
@@ -150,6 +150,9 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__about_about_component__ = __webpack_require__("../../../../../src/app/about/about.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__lagrang_lagrang_component__ = __webpack_require__("../../../../../src/app/lagrang/lagrang.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__practic_practic_component__ = __webpack_require__("../../../../../src/app/practic/practic.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__newtoon_newtoon_component__ = __webpack_require__("../../../../../src/app/newtoon/newtoon.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__splain_splain_component__ = __webpack_require__("../../../../../src/app/splain/splain.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__razional_razional_component__ = __webpack_require__("../../../../../src/app/razional/razional.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -166,11 +169,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_7__about_about_component__["a" /* AboutComponent */] },
     { path: 'about', component: __WEBPACK_IMPORTED_MODULE_7__about_about_component__["a" /* AboutComponent */], pathMatch: 'full' },
     { path: 'lagrang', component: __WEBPACK_IMPORTED_MODULE_8__lagrang_lagrang_component__["a" /* LagrangComponent */], pathMatch: 'full' },
-    { path: 'practic', component: __WEBPACK_IMPORTED_MODULE_9__practic_practic_component__["a" /* PracticComponent */], pathMatch: 'full' }
+    { path: 'practic', component: __WEBPACK_IMPORTED_MODULE_9__practic_practic_component__["a" /* PracticComponent */], pathMatch: 'full' },
+    { path: 'newtoon', component: __WEBPACK_IMPORTED_MODULE_10__newtoon_newtoon_component__["a" /* NewtoonComponent */], pathMatch: 'full' },
+    { path: 'spline', component: __WEBPACK_IMPORTED_MODULE_11__splain_splain_component__["a" /* SplainComponent */], pathMatch: 'full' },
+    { path: 'razional', component: __WEBPACK_IMPORTED_MODULE_12__razional_razional_component__["a" /* RazionalComponent */], pathMatch: 'full' }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -182,7 +191,10 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_6__nav_nav_component__["a" /* NavComponent */],
                 __WEBPACK_IMPORTED_MODULE_7__about_about_component__["a" /* AboutComponent */],
                 __WEBPACK_IMPORTED_MODULE_8__lagrang_lagrang_component__["a" /* LagrangComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__practic_practic_component__["a" /* PracticComponent */]
+                __WEBPACK_IMPORTED_MODULE_9__practic_practic_component__["a" /* PracticComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__newtoon_newtoon_component__["a" /* NewtoonComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__splain_splain_component__["a" /* SplainComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__razional_razional_component__["a" /* RazionalComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -222,7 +234,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/lagrang/lagrang.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>Метод Лагранжа</h2>"
+module.exports = "<h2 class=\"text text-center\">Метод Лагранжа</h2>\r\n\r\n<iframe src=\"./../../assets/doc/Lagrazha.html\" style=\"height:800px; width:100%; border:none; display:block\"></iframe>\r\n"
 
 /***/ }),
 
@@ -283,7 +295,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/nav/nav.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<ul class=\"list-group\">\n    <li class=\"list-group-item\"><a routerLink=\"/about\">Об интерполяции</a></li>\n    <li class=\"list-group-item\"><a routerLink=\"/lagrang\">Лагранжа</a></li>\n    <li class=\"list-group-item\"><a routerLink=\"/lagrang\">Ньютона</a></li>\n    <li class=\"list-group-item\"><a routerLink=\"/lagrang\">Кубических сплайнов</a></li>\n    <li class=\"list-group-item\"><a routerLink=\"/lagrang\">Рационализации</a></li>\n    <hr>\n    <hr>\n    <li class=\"list-group-item\"><a routerLink=\"/practic\">Практика</a></li>\n  </ul>"
+module.exports = "\n<ul class=\"list-group\">\n    <li class=\"list-group-item\"><a routerLink=\"/about\">Об интерполяции</a></li>\n    <li class=\"list-group-item\"><a routerLink=\"/lagrang\">Лагранжа</a></li>\n    <li class=\"list-group-item\"><a routerLink=\"/newtoon\">Ньютона</a></li>\n    <li class=\"list-group-item\"><a routerLink=\"/razional\">Рационализации</a></li>\n    <li class=\"list-group-item\"><a routerLink=\"/spline\">Кубических сплайнов</a></li>\n    <hr>\n    <hr>\n    <li class=\"list-group-item\"><a routerLink=\"/practic\">Практика</a></li>\n  </ul>"
 
 /***/ }),
 
@@ -317,6 +329,67 @@ var NavComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], NavComponent);
     return NavComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/newtoon/newtoon.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/newtoon/newtoon.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h2 class=\"text text-center\">Метод Ньютона</h2>\n\n<iframe src=\"./../../assets/doc/Nyutona.html\" style=\"height:800px; width:100%; border:none; display:block\"></iframe>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/newtoon/newtoon.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewtoonComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var NewtoonComponent = /** @class */ (function () {
+    function NewtoonComponent() {
+    }
+    NewtoonComponent.prototype.ngOnInit = function () {
+    };
+    NewtoonComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-newtoon',
+            template: __webpack_require__("../../../../../src/app/newtoon/newtoon.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/newtoon/newtoon.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], NewtoonComponent);
+    return NewtoonComponent;
 }());
 
 
@@ -606,6 +679,128 @@ var PracticComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], PracticComponent);
     return PracticComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/razional/razional.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/razional/razional.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h2 class=\"text text-center\">Метод рационализации</h2>\n\n<iframe src=\"./../../assets/doc/Ratsionalizatsii.html\" style=\"height:800px; width:100%; border:none; display:block\"></iframe>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/razional/razional.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RazionalComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var RazionalComponent = /** @class */ (function () {
+    function RazionalComponent() {
+    }
+    RazionalComponent.prototype.ngOnInit = function () {
+    };
+    RazionalComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-razional',
+            template: __webpack_require__("../../../../../src/app/razional/razional.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/razional/razional.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], RazionalComponent);
+    return RazionalComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/splain/splain.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/splain/splain.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<h2 class=\"text text-center\">Метод кубических сплайнов</h2>\n\n<iframe src=\"./../../assets/doc/Kubicheskikh_splaynov.html\" style=\"height:800px; width:100%; border:none; display:block\"></iframe>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/splain/splain.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SplainComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SplainComponent = /** @class */ (function () {
+    function SplainComponent() {
+    }
+    SplainComponent.prototype.ngOnInit = function () {
+    };
+    SplainComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-splain',
+            template: __webpack_require__("../../../../../src/app/splain/splain.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/splain/splain.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], SplainComponent);
+    return SplainComponent;
 }());
 
 
